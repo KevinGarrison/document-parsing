@@ -5,21 +5,30 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "black[jupyter]>=25.11.0",
     "markitdown[docx,pdf]>=0.1.4",
     "nltk>=3.9.2",
     "pdfminer-six>=20251107",
-    "stanza>=1.11.0",
 ]
 
 [dependency-groups]
 dev = [
-    "black>=25.11.0",
     "ipykernel>=7.1.0",
-    "isort>=7.0.0",
     "mkdocs>=1.6.1",
     "mkdocs-material>=9.7.0",
     "mkdocstrings[python]>=0.26",
     "ruff>=0.14.8",
-    "tomlq>=0.1.0",
 ]
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+skip-string-normalization = false
+
+[tool.isort]
+profile = "black"
+line_length = 88
+multi_line_output = 3
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+
